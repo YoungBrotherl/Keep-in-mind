@@ -1,0 +1,22 @@
+/* miniprogram/pages/details/details.wxss */
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.comment {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.comment-img {
+  width: 100%;
+}
+.comment-text {
+  margin-top:28rpx;
+  font-size:30rpx;
+  color:#494949;
+  line-height:1.5;
+}

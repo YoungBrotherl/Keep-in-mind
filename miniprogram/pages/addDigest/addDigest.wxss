@@ -1,0 +1,50 @@
+/* miniprogram/pages/addDigest/addDigest.wxss */
+page {
+  height: 100%;
+}
+.comment {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.comment-upload {
+  position: relative;
+  margin: 20rpx 20rpx 0;
+  flex: 0 0 400rpx;
+  background-color: #eff1f3;
+  color: #333;
+  border: 1px solid #eee;
+  font-size: 28rpx;
+}
+.comment-upload.img {
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+.comment-text {
+  flex: 1;
+  padding: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.comment-save {
+  margin: 20rpx;
+  background-color: #23b8ff;
+  color: #fff;
+}
+
+.book-title {
+  font-size: 48rpx;
+}
+
+.book-info {
+  display: flex;
+  min-height: 200rpx;
+}
+.book-img {
+  width: 200rpx;
+  height: 100%;
+}
+

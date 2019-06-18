@@ -1,0 +1,39 @@
+<!--miniprogram/pages/details/details.wxml-->
+<view wx:if="{{details && details.saveType == 'comment'}}" class='comment'>
+  <image src='{{details.img}}' class='comment-img' mode='widthFix'></image>
+  <!-- 评论 -->
+  <view class='comment-text'>{{details.comment}}</view>
+</view>
+<view wx:if="{{details && details.saveType == 'digest'}}" class="digest-wrapper comment">
+  <view class="digest">
+    <!-- 书名 -->
+    <view class="digest-title">{{details.bookInfo.title}}</view>
+    <view class="digest-cnt">
+      <view class="digest-info">
+        <!-- 评分 -->
+        <view class="digest-info-grades">评分： {{details.bookInfo.rating.average}}</view>
+        <view class="digest-info-detail">
+          <!-- 作者 -->
+          <text>{{details.bookInfo.author}} / </text>
+          <!-- 出版社 -->
+          <text>{{details.bookInfo.publisher}} / </text>
+          <!-- 页数 -->
+          <text>{{details.bookInfo.pages}}页 / </text>
+          <!-- 装订 -->
+          <text>{{details.bookInfo.binding}} / </text>
+          <!-- 加个 -->
+          <text>{{details.bookInfo.price}} / </text>
+          <!-- 出版日期 -->
+          <text>{{details.bookInfo.pubdate}}</text>
+        </view>
+      </view>
+      <!-- 图片 -->
+      <view class="digest-cover">
+        <image src="{{details.bookInfo.images.small}}" mode="aspectFit"></image>
+      </view>
+    </view>
+    <!-- 评论 -->
+  <view class='comment-text'>{{details.comment}}</view>
+  </view>
+</view>
+  

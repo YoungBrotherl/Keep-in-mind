@@ -1,0 +1,155 @@
+/* miniprogram/pages/list/list.wxss */
+page {
+  height: 100%;
+}
+
+.list-box {
+  display: inline-block;
+  padding: 36rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.list-time {
+  font-size: 32rpx;
+}
+.list-day {
+  font-size: 60rpx;
+}
+.list-hour {
+  margin-left: 20rpx;
+}
+
+.comment-icon {
+  width: 22rpx;
+  height: 36rpx;
+  vertical-align: top;
+}
+.comment-icon.left {
+  margin-right: 6rpx;
+}
+.comment-icon.right {
+  margin-left: 6rpx;
+}
+
+.list-comment {
+  margin: 14rpx 0;
+  font-size: 32rpx;
+  line-height: 1.5;
+}
+
+.list-img {
+  display: block;
+  width: 100%;
+  height: 364rpx;
+  background-color: #f4f5f7;
+}
+
+/* 按钮 */
+.nav-box {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 330rpx;
+  height: 252rpx;
+  background-color: transparent;
+  font-size: 24rpx;
+}
+
+.nav-box .nav-item, .nav-icon {
+  position: absolute;
+  left: 50%;
+  bottom: 40rpx;
+  margin-left: -45rpx;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90rpx;
+  height: 90rpx;
+  color: #fff;
+  background-color: #23b8ff;
+  border-radius: 50%;
+}
+
+.nav-icon {
+  z-index: 3;
+  margin-left: -55rpx;
+  width: 110rpx;
+  height: 110rpx;
+  font-size: 80rpx;
+}
+.nav-icon .nav-text {
+  margin-bottom: 10rpx;
+}
+
+.nav-item {
+  transition: transform 0.3s cubic-bezier(.42, 0, .58, 1);
+}
+.active .nav-item:nth-of-type(1) {
+  transform: rotate(10deg) translateX(-120rpx);
+}
+.active .nav-item:nth-of-type(1) .nav-text {
+  transform: rotate(-10deg);
+}
+.active .nav-item:nth-of-type(2) {
+  transform: rotate(90deg) translateX(-120rpx);
+}
+.active .nav-item:nth-of-type(2) .nav-text {
+  transform: rotate(-90deg);
+}
+.active .nav-item:nth-of-type(3) {
+  transform: rotate(170deg) translateX(-120rpx);
+}
+.active .nav-item:nth-of-type(3) .nav-text {
+  transform: rotate(-170deg);
+}
+
+
+/** 书摘样式 **/
+.digest-book {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  height: 204rpx;
+  background-color: #f4f5f7;
+  padding: 26rpx 28rpx;
+  margin: 24rpx 0 0;
+}
+
+.digest-book-title {
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.digest-book-score {
+  margin-top: 14rpx;
+}
+
+.digest-book-detail {
+  display: -webkit-box;
+  margin-top: 14rpx; 
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.digest-book-cover {
+  width: 102rpx;
+  height: 148rpx;
+  flex: 0 0 102rpx;
+  margin-right: 28rpx;
+}
+
+.digest-book-info {
+  flex: 1;
+  font-size: 20rpx;
+  color: #737373;
+  overflow:hidden;
+}

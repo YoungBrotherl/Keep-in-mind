@@ -1,0 +1,35 @@
+<!--miniprogram/pages/addDigest/addDigest.wxml-->
+<view wx:if="{{bookInfo.title}}" class="digest-wrapper comment">
+  <view class="digest">
+    <!-- 书名 -->
+    <view class="digest-title">{{bookInfo.title}}</view>
+    <view class="digest-cnt">
+      <view class="digest-info">
+        <!-- 评分 -->
+        <view class="digest-info-grades">评分： {{bookInfo.rating.average}}</view>
+        <view class="digest-info-detail">
+          <!-- 作者 -->
+          <text>{{bookInfo.author}} / </text>
+          <!-- 出版社 -->
+          <text>{{bookInfo.publisher}} / </text>
+          <!-- 页数 -->
+          <text>{{bookInfo.pages}}页 / </text>
+          <!-- 装订 -->
+          <text>{{bookInfo.binding}} / </text>
+          <!-- 加个 -->
+          <text>{{bookInfo.price}} / </text>
+          <!-- 出版日期 -->
+          <text>{{bookInfo.pubdate}}</text>
+        </view>
+      </view>
+      <!-- 图片 -->
+      <view class="digest-cover">
+        <image src="{{bookInfo.images.small}}" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 输入评论 -->
+  <textarea class='comment-text' placeholder='最精彩的书评从这里开始' value='{{comment}}' bindinput='changeText' maxlength="140"></textarea>
+  <!-- 保存按钮 -->
+  <button class='comment-save' bindtap='onSave'>保存</button>
+</view>

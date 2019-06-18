@@ -1,0 +1,66 @@
+<!--miniprogram/pages/list/list.wxml-->
+<view wx:if="{{btnShow && list.length == 0}}" class='default-box'>
+  <view>
+    <image src='./../../images/default.png' class='default-img'></image>
+    <view class='default-text'>你的日记本是空的~</view>
+  </view>
+</view>
+<view wx:else>
+  <!-- 评论列表 -->
+  <scroll-view scroll-y style='height:100%;'>
+    <view wx:for="{{list}}" wx:key="id" class='list-box' data-index="{{index}}" bindtap='goDetails'>
+      <!-- 日期 -->
+      <view class='list-time'>
+        <text class='list-day'>{{item.timeInfo.date}}/</text>
+        <text class='list-month'>{{item.timeInfo.month}}/{{item.timeInfo.year}}</text>
+        <text class='list-hour'>{{item.timeInfo.hour}}:{{item.timeInfo.min}}</text>
+      </view>
+      <view>
+        <!-- 评论 -->
+        <view class='list-comment'>
+          <image src='./../../images/left-quote.png' class='comment-icon left'></image>
+          <text>{{item.comment}}</text>
+          <image src='./../../images/right-quote.png' class='comment-icon right'></image>
+        </view>
+        <!-- 图片 -->
+        <image wx:if="{{item.saveType == 'comment'}}" src='{{item.img}}' mode='aspectFill' class='list-img' data-url='{{item.img}}' catchtap='seeImg'></image>
+      </view>
+      <view wx:if="{{item.saveType == 'digest'}}">
+        <view class="digest-book">
+          <image class="digest-book-cover" src="{{item.bookInfo.images.small}}" mode="aspectFix" />
+          <view class="digest-book-info">
+            <view class="digest-book-title">{{item.bookInfo.title}}</view>
+            <view class="digest-book-score">评分： {{item.bookInfo.rating.average}}</view>
+            <view class="digest-book-detail">
+              {{item.bookInfo.author}} / {{item.bookInfo.publisher}} / {{item.bookInfo.pages}}页 / {{item.bookInfo.binding}} / {{item.bookInfo.price}} / {{item.bookInfo.pubdate}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 底部按钮 -->
+<view wx:if='{{btnShow}}' class="nav-box {{active? 'active': ''}}">
+  <view class='nav-item' data-type='0' bindtap='onBtn'>
+    <text class='nav-text'>书摘</text>
+  </view>
+  <view class='nav-item' data-type='1' bindtap='onBtn'>
+    <text class='nav-text'>写日记</text>
+  </view>
+  <view class='nav-item' data-type='2' bindtap='onBtn'>
+    <text class='nav-text'>文章</text>
+  </view>
+  <view wx:if="{{!active}}" class='nav-icon' bindtap='onToggle'>
+    <text class='nav-text'>+</text>
+  </view>
+  <view wx:else class='nav-icon' bindtap='onToggle'>
+    <text class='nav-text'>×</text>
+  </view>
+</view>
+
+<!-- 授权 -->
+<!-- <view class='grant-box'>
+  <button class='grant-btn' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">开始使用</button>
+</view> -->

@@ -1,0 +1,15 @@
+<!--miniprogram/pages/addComment/addComment.wxml-->
+<view class='comment'>
+  <!-- 选择图片 -->
+  <view class='comment-upload' wx:if="{{!img}}" bindtap='onUploadImg'>
+    <text class='add-icon'>+</text>
+    <text class='add-tips'>点击上传图片</text>
+  </view>
+  <view class='comment-upload img' wx:else bindtap='onUploadImg'>
+    <image class='add-img' src='{{img}}' mode='aspectFit'></image>
+  </view>
+  <!-- 输入评论 -->
+  <textarea class='comment-text' placeholder='记录你的生活!' value='{{comment}}' bindinput='changeText'></textarea>
+  <!-- 保存按钮 -->
+  <button class='comment-save' bindtap='onSave'>保存</button>
+</view>

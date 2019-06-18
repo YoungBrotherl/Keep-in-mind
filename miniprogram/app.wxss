@@ -1,0 +1,103 @@
+/**app.wxss**/
+page {
+  position: relative;
+}
+/* 复制的样式 */
+.digest-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.digest-cnt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f4f5f7;
+  padding: 0 30rpx 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.digest-title {
+  padding:20rpx 30rpx;
+  font-size: 48rpx;
+  background-color: #f4f5f7;
+}
+
+.digest-info {
+  color: #494949;
+  font-size: 28rpx;
+}
+
+.digest-info-detail {
+  margin-top: 30rpx;
+  padding-right: 48rpx;
+  word-break: break-all;
+}
+
+.digest-cover {
+  flex: 0 0 200rpx;
+}
+
+.digest-cover image {
+  width: 200rpx;
+  height: 100%;
+}
+
+.digest-comment {
+  color: #494949;
+  font-size: 28rpx;  
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.digest {
+  flex: 0 0 204rpx;
+}
+
+.digest-cnt {
+  margin: 0;
+}
+
+/* 缺省样式 */
+.default-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.default-img {
+  width: 304rpx;
+  height: 231rpx;
+}
+.default-text {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+
+/* 授权 */
+.grant-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, .3)
+}
+.grant-btn {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width: 200rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  background-color: #23b8ff;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  color: #fff;
+}
