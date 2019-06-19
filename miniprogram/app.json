@@ -1,14 +1,15 @@
 {
   "pages": [
     "pages/list/list",
+    
     "pages/addDigest/addDigest",
     "pages/addComment/addComment",
     "pages/details/details"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#f6f6f6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#f6f6f6",
     "navigationBarTitleText": "随心记",
     "navigationBarTextStyle": "black"
   },

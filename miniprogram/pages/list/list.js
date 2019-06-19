@@ -20,7 +20,7 @@ Page({
           ''
         ],
         _this = this;
-    if (type == '2') {
+    if (type == '2' || type == '0') {
       wx.showToast({
         title: '该功能还未完成哦',
         icon: 'none'
@@ -43,25 +43,6 @@ Page({
     this.setData({
       active: !this.data.active
     })
-  },
-
-  // 授权
-  onGrantBtn: function() {
-    wx.login({
-      success: function (res) {
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'https://test.com/onLogin',
-            data: {
-              code: res.code
-            }
-          })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
-    });
   },
 
   // 跳转详情页
@@ -153,11 +134,26 @@ Page({
     })
   },
 
+  // 获取用户openid
+  getOpenid() {
+    let that = this;
+    wx.cloud.callFunction({
+      name: 'getOpenid',
+      complete: res => {
+        console.log(res)
+        wx.setStorage({
+          key: 'openId',
+          data: res.result.openid,
+        })
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // this.getOpenid()
   },
 
   /**

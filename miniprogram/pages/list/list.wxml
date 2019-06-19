@@ -2,7 +2,7 @@
 <view wx:if="{{btnShow && list.length == 0}}" class='default-box'>
   <view>
     <image src='./../../images/default.png' class='default-img'></image>
-    <view class='default-text'>你的日记本是空的~</view>
+    <view class='default-text'>你的生活是空的~</view>
   </view>
 </view>
 <view wx:else>
@@ -47,7 +47,7 @@
     <text class='nav-text'>书摘</text>
   </view>
   <view class='nav-item' data-type='1' bindtap='onBtn'>
-    <text class='nav-text'>写日记</text>
+    <text class='nav-text'>记录</text>
   </view>
   <view class='nav-item' data-type='2' bindtap='onBtn'>
     <text class='nav-text'>文章</text>
